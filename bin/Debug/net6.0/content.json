@@ -1,0 +1,88 @@
+{
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Format": "2.9.0",
+    "Changes": [
+
+        //Includiere die Daten aus den anderen Dateien
+        { "Action": "Include", "FromFile": "assets/Characters/Dialogue/Kuro.json" },
+        //{ "Action": "Include", "FromFile": "assets/dialogue.json" },
+        //{ "Action": "Include", "FromFile": "assets/schedule.json" },
+
+        //Lade NPC Kuro
+        {
+            "Action": "Load",
+            "Target": "Characters/Kuro",
+            "FromFile": "assets/Characters/Kuro.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Kuro",
+            "FromFile": "assets/Portraits/Kuro.png"
+        },
+
+        //Lade GenericZelt
+        {
+            "Action": "Load",
+            "Target": "Maps/GenericZelt",
+            "FromFile": "assets/Maps/GenericZelt.tmx"
+        },
+
+        //Eine Map-Änderung (z.B. ein Stück der Stadt bearbeiten)
+        {
+            "Action": "EditMap",
+            "Target": "Maps/BusStop",
+            "FromFile": "assets/Maps/BusStop.tmx",
+            "FromArea":{"X": 32, "Y": 12, "Width": 5, "Height": 8},
+            "ToArea": {"X": 32, "Y": 12, "Width": 5, "Height": 8}
+            },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Town",
+            "FromFile": "assets/Maps/Town.tmx",
+            "FromArea":{"X": 109, "Y": 41, "Width": 21, "Height": 69},
+            "ToArea": {"X": 109, "Y": 41, "Width": 21, "Height": 69}
+            }, 
+
+        //Eine Map Änderung (bereits vorhandene Objekte entfernen, z.B. Büsche an der Bushaltestelle)
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Fields": {
+                "BusStop": {
+                    "FixedBushes": [
+                        {
+                            "Id": "32_17", // SMAPI nutzt oft die Koordinate als ID
+                            "Action": "Remove"
+                        }
+                    ]
+                }
+            }
+        },
+        
+        //Erstellt NPC Kuro
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "Kuro": {
+                    "DisplayName": "Kuro",
+                    "BirthSeason": "Winter",
+                    "BirthDay": 4,
+                    "HomeRegion": "BusStop",
+                    "Gender": "Male", // Male, Female, Undefined
+                    "Age": "Adult",        // Child, Teen, Adult
+                    "Manners": "Polite",   // Polite, Neutral, Rude
+                    "SocialAnxiety": "Shy",   // Outgoing, Neutral, Shy
+                    "Optimism": "Negative",   // Positive, Neutral, Negative
+                    "CanBeRomanced": true,
+                    "Home": [{
+                        "Id": "Default",
+                        "Location": "BusStop", // Wo er wohnt
+                        "Tile": { "X": 35, "Y": 16 } // Die Koordinaten auf der Map
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
