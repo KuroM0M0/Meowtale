@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="8" height="9" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="8" height="9" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="1">
  <tileset firstgid="1" name="townInterior" tilewidth="16" tileheight="16" tilecount="2176" columns="32">
   <image source="townInterior.png" width="512" height="1088"/>
   <tile id="810">
@@ -14,13 +14,20 @@
     <property name="Sittable" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="1186">
+   <properties>
+    <property name="TouchAction" value="Warp BusStop 35 17"/>
+   </properties>
+  </tile>
  </tileset>
  <layer id="1" name="Back" width="8" height="9">
-  <properties>
-   <property name="TouchAction" value="Warp [BusStop] [35] [17]"/>
-  </properties>
   <data encoding="base64" compression="zlib">
    eJyVz7sNgDAMRVEHwiB8BwEyCEJijkA2AQblFimMKyiO9OLnFHYi4j4ovEgJj8q/u5p3gxYdegxqZyGPmDAjYDP9ipSRo+2T8affyYfqyJFZ1DeczK/sVn8fQNES1g==
+  </data>
+ </layer>
+ <layer id="4" name="Back2" width="8" height="9">
+  <data encoding="base64" compression="zlib">
+   eJxjYBh54CUL8WoBKdgA7g==
   </data>
  </layer>
  <layer id="2" name="Buildings" width="8" height="9">
@@ -34,7 +41,7 @@
  </layer>
  <layer id="3" name="Front" width="8" height="9">
   <data encoding="base64" compression="zlib">
-   eJxjYBgaQJuZema9ZCFeLQA/ZQEc
+   eJxjYBgaQJt5YOwFABatAC8=
   </data>
  </layer>
 </map>

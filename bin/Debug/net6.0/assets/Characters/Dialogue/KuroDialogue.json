@@ -1,0 +1,29 @@
+{
+    "Introduction": "Guten Hallo! Ich bin vor kurzem erst Bewusstlos in diesem Zelt da unten wach geworden. 
+    Ich weiß leider nicht mehr wer ich bin.",
+    "KuroGreeting": "$q KuroStartFrage/
+        #Guten Moin! Hab gehört hier soll es nen kleinen Bauernhof geben?
+        #$r KuroStartFrage 25 KuroStartFrage_Ja#Ja klar, das ist meiner!
+        #$r KuroStartFrage 0 KuroStartFrage_Nein#Nee, da musst du dich verhöhrt haben",
+    "KuroStartFrage_Ja": "Ohaa! Das hört sich doch super an! :D Ich komm morgen direkt mal vorbei! %backstat KuroStart",
+    "KuroStartFrage_Nein": "Mhh. Schade, ich hatte mich über frische Äpfel gefreut :( %backstat KuroStart",
+    "AcceptGiftLoves": "Das ist... für mich? Woher wusstest du, dass ich das mag?",
+    "AcceptGiftHates": "Oh. Das... hättest du lieber behalten sollen.",
+
+
+    "Test":
+    "I think I'll go to the beach tomorrow!
+    #$q 305/306 beachquestion_followup#Would you like to go with me?
+        #$r 305 15 beachquestion_yes#Sure, I would love to!
+        #$r 306 0 beachquestion_sorry#Oh, sorry, I've already made plans with someone else...
+        #$r 306 -10 beachquestion_no#No thank you.
+    ",
+    "beachquestion_yes": "Good! It's a date.$h",
+    "beachquestion_sorry": "Oh. Darn. Okay.$6",
+    "beachquestion_no": "Oh. Um. Sorry.$s",
+    "beachquestion_followup":
+        "$p 305
+            #Tomorrow should be a lot of fun!$h
+            |Hmm, I wonder if I can get someone to go with me...$s
+        ",
+}

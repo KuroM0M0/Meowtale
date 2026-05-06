@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MeowtaleValley")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34166c9644d5f580fffe5345aa601ce018dd2695")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fcf2d4d1bb6f2647215032ed423cd33fa52722e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MeowtaleValley")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MeowtaleValley")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

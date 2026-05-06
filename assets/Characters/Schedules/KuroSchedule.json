@@ -1,0 +1,15 @@
+{
+    "default": "
+        0610 BusStop 23 21 \"Characters\\Dialogue\\Kuro:KuroGreeting\"/
+        1200 Town 26 21 2/
+        1800 KuroZelt 3 6 2",
+    "rain": "
+        0610 KuroZelt 3 6 2/
+        1000 KuroZelt 2 2 1/
+        1900 KuroZelt 3 6 0",
+    "spring": "GOTO default",
+    "KuroStart": "
+        0610 BusStop 23 21 \"Characters\\Dialogue\\Kuro:Test\"/
+        1200 Town 26 21 2/
+        1800 KuroZelt 3 6 2",
+}

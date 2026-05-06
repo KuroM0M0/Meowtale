@@ -1,12 +1,7 @@
 {
     "$schema": "https://smapi.io/schemas/content-patcher.json",
-    "Format": "2.9.0",
+    "Format": "2.9.1",
     "Changes": [
-
-        //Includiere die Daten aus den anderen Dateien
-        { "Action": "Include", "FromFile": "assets/Characters/Dialogue/Kuro.json" },
-        //{ "Action": "Include", "FromFile": "assets/dialogue.json" },
-        //{ "Action": "Include", "FromFile": "assets/schedule.json" },
 
         //Lade NPC Kuro
         {
@@ -19,12 +14,22 @@
             "Target": "Portraits/Kuro",
             "FromFile": "assets/Portraits/Kuro.png"
         },
-
-        //Lade GenericZelt
         {
             "Action": "Load",
-            "Target": "Maps/GenericZelt",
-            "FromFile": "assets/Maps/GenericZelt.tmx"
+            "Target": "Characters/Dialogue/Kuro",
+            "FromFile": "assets/Characters/Dialogue/KuroDialogue.json"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/Schedules/Kuro",
+            "FromFile": "assets/Characters/schedules/KuroSchedule.json"
+        },
+
+        //Lade KuroZelt
+        {
+            "Action": "Load",
+            "Target": "Maps/KuroZelt",
+            "FromFile": "assets/Maps/KuroZelt.tmx"
         },
 
         //Eine Map-Änderung (z.B. ein Stück der Stadt bearbeiten)
@@ -58,6 +63,24 @@
                 }
             }
         },
+
+        //Erstellt einen neuen Ort (Kuros Zelt)
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "KuroZelt": {               // <-- Dieser Name muss mit dem Namen im Warp übereinstimmen
+                    "DisplayName": "Kuros Zelt",
+                    "Map": "Maps/KuroZelt", // Verweis auf die geladene Map
+                    "IsStructure": true,    // Sagt dem Spiel: "Das ist ein Gebäude-Innenraum" (wie das Haus von Caroline)
+                    "ExcludeFromRandomEncounters": true,
+                    "CreateNpcInLocation": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/KuroZelt",
+                    }
+                }
+            }
+        },
         
         //Erstellt NPC Kuro
         {
@@ -68,17 +91,22 @@
                     "DisplayName": "Kuro",
                     "BirthSeason": "Winter",
                     "BirthDay": 4,
-                    "HomeRegion": "BusStop",
+                    "HomeRegion": "Other",
                     "Gender": "Male", // Male, Female, Undefined
                     "Age": "Adult",        // Child, Teen, Adult
                     "Manners": "Polite",   // Polite, Neutral, Rude
                     "SocialAnxiety": "Shy",   // Outgoing, Neutral, Shy
                     "Optimism": "Negative",   // Positive, Neutral, Negative
                     "CanBeRomanced": true,
+                    "IntroductionsQuest": true,
+                    "ItemDeliveryQuests": true,
+                    "DumpsterDiveEmote": 4,
+                    "DumpsterDiveFriendshipEffect": 0,
                     "Home": [{
-                        "Id": "Default",
-                        "Location": "BusStop", // Wo er wohnt
-                        "Tile": { "X": 35, "Y": 17 } // Die Koordinaten auf der Map
+                        "Id": "KuroZelt",
+                        "Location": "KuroZelt", // Wo er wohnt
+                        "Tile": { "X": 3, "Y": 6 }, // Die Koordinaten auf der Map an denen er Spawnt
+                        "Direction": "right" // Die Richtung, in die er schaut
                         }
                     ]
                 }
