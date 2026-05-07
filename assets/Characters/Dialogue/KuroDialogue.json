@@ -1,12 +1,11 @@
 {
-    "Introduction": "Guten Hallo! Ich bin vor kurzem erst Bewusstlos in diesem Zelt da unten wach geworden. 
-    Ich weiß leider nicht mehr wer ich bin.",
+    "Introduction": "$1 KuroGreeting#Guten Hallo! Ich bin der neue Bauer hier im Dorf. Warte, wer bist du eigentlich?",
     "KuroGreeting": "$q KuroStartFrage/
         #Guten Moin! Hab gehört hier soll es nen kleinen Bauernhof geben?
         #$r KuroStartFrage 25 KuroStartFrage_Ja#Ja klar, das ist meiner!
         #$r KuroStartFrage 0 KuroStartFrage_Nein#Nee, da musst du dich verhöhrt haben",
-    "KuroStartFrage_Ja": "Ohaa! Das hört sich doch super an! :D Ich komm morgen direkt mal vorbei! %backstat KuroStart",
-    "KuroStartFrage_Nein": "Mhh. Schade, ich hatte mich über frische Äpfel gefreut :( %backstat KuroStart",
+    "KuroStartFrage_Ja": "Ohaa! Das hört sich doch super an! :D Ich komm morgen direkt mal vorbei!",
+    "KuroStartFrage_Nein": "Mhh. Schade, ich hatte mich über frische Äpfel gefreut :(",
     "AcceptGiftLoves": "Das ist... für mich? Woher wusstest du, dass ich das mag?",
     "AcceptGiftHates": "Oh. Das... hättest du lieber behalten sollen.",
 

@@ -1,0 +1,21 @@
+{
+    "Changes": [
+        //Erstellt einen neuen Ort (Kuros Zelt)
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "KuroZelt": {               // <-- Dieser Name muss mit dem Namen im Warp übereinstimmen
+                    "DisplayName": "Kuros Zelt",
+                    "Map": "Maps/KuroZelt", // Verweis auf die geladene Map
+                    "IsStructure": true,    // Sagt dem Spiel: "Das ist ein Gebäude-Innenraum" (wie das Haus von Caroline)
+                    "ExcludeFromRandomEncounters": true,
+                    "CreateNpcInLocation": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/KuroZelt",
+                    }
+                }
+            }
+        }
+    ]
+}

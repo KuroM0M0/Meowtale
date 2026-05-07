@@ -1,0 +1,69 @@
+{
+    //Erstellt NPC Kuro
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "Kuro": {
+                    "DisplayName": "Kuro",
+                    "BirthSeason": "Winter",
+                    "BirthDay": 4,
+                    "HomeRegion": "Other",
+                    "Gender": "Male", // Male, Female, Undefined
+                    "Age": "Adult",        // Child, Teen, Adult
+                    "Manners": "Polite",   // Polite, Neutral, Rude
+                    "SocialAnxiety": "Shy",   // Outgoing, Neutral, Shy
+                    "Optimism": "Negative",   // Positive, Neutral, Negative
+                    "CanBeRomanced": true,
+                    "IntroductionsQuest": true,
+                    "ItemDeliveryQuests": true,
+                    "DumpsterDiveEmote": 4,
+                    "DumpsterDiveFriendshipEffect": 0,
+                    "Dialogue": "Characters/Dialogue/KuroDialogue",
+                    "Schedule": "Characters/Schedules/KuroSchedule",
+                    "Home": [{
+                        "Id": "KuroZelt",
+                        "Location": "KuroZelt", // Wo er wohnt
+                        "Tile": { "X": 3, "Y": 6 }, // Die Koordinaten auf der Map an denen er Spawnt
+                        "Direction": "right" // Die Richtung, in die er schaut
+                        }
+                    ]
+                }
+            }
+        },
+
+        //Erstellt NPC Weltuntergangs Kultist Nils
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "Weltuntergangs Kultist Nils": {
+                    "DisplayName": "Weltuntergangs Kultist Nils",
+                    "BirthSeason": "Winter",
+                    "BirthDay": 7,
+                    "HomeRegion": "Other",
+                    "Gender": "Male", // Male, Female, Undefined
+                    "Age": "Adult",        // Child, Teen, Adult
+                    "Manners": "Rude",   // Polite, Neutral, Rude
+                    "SocialAnxiety": "Shy",   // Outgoing, Neutral, Shy
+                    "Optimism": "Negative",   // Positive, Neutral, Negative
+                    "CanBeRomanced": true,
+                    "IntroductionsQuest": true,
+                    "ItemDeliveryQuests": true,
+                    "DumpsterDiveEmote": 4,
+                    "DumpsterDiveFriendshipEffect": 0,
+                    "Dialogue": "Characters/Dialogue/NilsDialogue",
+                    "Schedule": "Characters/Schedules/NilsSchedule",
+                    "Home": [{
+                        "Id": "NilsZelt",
+                        "Location": "NilsZelt", // Wo er wohnt
+                        "Tile": { "X": 3, "Y": 6 }, // Die Koordinaten auf der Map an denen er Spawnt
+                        "Direction": "right" // Die Richtung, in die er schaut
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
