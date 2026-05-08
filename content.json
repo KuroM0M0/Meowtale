@@ -50,8 +50,11 @@
             "Target": "Maps/BusStop",
             "FromFile": "assets/Maps/BusStop.tmx",
             "FromArea":{"X": 32, "Y": 12, "Width": 5, "Height": 8},
-            "ToArea": {"X": 32, "Y": 12, "Width": 5, "Height": 8}
-            },
+            "ToArea": {"X": 32, "Y": 12, "Width": 5, "Height": 8},
+            "MapProperties": {
+                "Warp": "35 16 KuroZelt 3 8" // So in Zukunft Warps deklarieren
+            }
+        },
         {
             "Action": "EditMap",
             "Target": "Maps/Town",
