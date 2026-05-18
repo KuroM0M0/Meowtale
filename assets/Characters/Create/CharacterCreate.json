@@ -16,7 +16,7 @@
                     "SocialAnxiety": "Shy",   // Outgoing, Neutral, Shy
                     "Optimism": "Negative",   // Positive, Neutral, Negative
                     "CanBeRomanced": true,
-                    "IntroductionsQuest": true,
+                    "IntroductionsQuest": false,
                     "ItemDeliveryQuests": true,
                     "DumpsterDiveEmote": 4,
                     "DumpsterDiveFriendshipEffect": 0,
@@ -58,6 +58,40 @@
                     "Home": [{
                         "Id": "NilsZelt",
                         "Location": "NilsZelt", // Wo er wohnt
+                        "Tile": { "X": 3, "Y": 6 }, // Die Koordinaten auf der Map an denen er Spawnt
+                        "Direction": "right" // Die Richtung, in die er schaut
+                        }
+                    ]
+                }
+            }
+        },
+
+
+        //Chii
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "Chii": {
+                    "DisplayName": "Chii",
+                    "BirthSeason": "Winter",
+                    "BirthDay": 7,
+                    "HomeRegion": "Other",
+                    "Gender": "Female", // Male, Female, Undefined
+                    "Age": "Adult",        // Child, Teen, Adult
+                    "Manners": "Neutral",   // Polite, Neutral, Rude
+                    "SocialAnxiety": "Neutral",   // Outgoing, Neutral, Shy
+                    "Optimism": "Positive",   // Positive, Neutral, Negative
+                    "CanBeRomanced": true,
+                    "IntroductionsQuest": false,
+                    "ItemDeliveryQuests": true,
+                    "DumpsterDiveEmote": 4,
+                    "DumpsterDiveFriendshipEffect": 0,
+                    "Dialogue": "Characters/Dialogue/ChiiDialogue",
+                    "Schedule": "Characters/Schedules/ChiiSchedule",
+                    "Home": [{
+                        "Id": "ChiiZelt",
+                        "Location": "ChiiZelt", // Wo er wohnt
                         "Tile": { "X": 3, "Y": 6 }, // Die Koordinaten auf der Map an denen er Spawnt
                         "Direction": "right" // Die Richtung, in die er schaut
                         }

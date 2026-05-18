@@ -12,7 +12,25 @@
                     "ExcludeFromRandomEncounters": true,
                     "CreateNpcInLocation": false,
                     "CreateOnLoad": {
-                        "MapPath": "Maps/KuroZelt",
+                        "MapPath": "Maps/KuroZelt"
+                    }
+                }
+            }
+        },
+
+
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "ChiiZelt": {               // <-- Dieser Name muss mit dem Namen im Warp übereinstimmen
+                    "DisplayName": "Chiis Zelt",
+                    "Map": "Maps/ChiiZelt", // Verweis auf die geladene Map
+                    "IsStructure": true,    // Sagt dem Spiel: "Das ist ein Gebäude-Innenraum" (wie das Haus von Caroline)
+                    "ExcludeFromRandomEncounters": true,
+                    "CreateNpcInLocation": false,
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/ChiiZelt"
                     }
                 }
             }

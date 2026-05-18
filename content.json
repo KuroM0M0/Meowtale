@@ -3,19 +3,87 @@
     "Format": "2.9.1",
     "Changes": [
 
-        //Lade die Character Erstellung
-        {
-            "Action": "Include",
-            "FromFile": "assets/Characters/Create/CharacterCreate.json"
-        },
-
-        //Lade die Locations
+        //1. Includes
         {
             "Action": "Include",
             "FromFile": "assets/Maps/Create/MapCreate.json"
         },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Characters/Create/CharacterCreate.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Characters/Logic/KuroLogic.json"
+        },
+        {
+            "Action": "Include",
+            "FromFile": "assets/Items/ItemCreate.json"
+        },
 
-        //Lade NPC Kuro
+
+
+
+        //2. Eine Map-Änderung (ein Stück der Stadt bearbeiten)
+        {
+            "Action": "EditMap",
+            "Target": "Maps/BusStop",
+            "FromFile": "assets/Maps/BusStop.tmx",
+            "FromArea":{"X": 32, "Y": 12, "Width": 5, "Height": 8},
+            "ToArea": {"X": 32, "Y": 12, "Width": 5, "Height": 8},
+            "AddWarps": [
+                "35 16 KuroZelt 3 8"
+            ]
+        },
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Town",
+            "FromFile": "assets/Maps/Town.tmx",
+            "FromArea":{"X": 109, "Y": 41, "Width": 21, "Height": 69},
+            "ToArea": {"X": 109, "Y": 41, "Width": 21, "Height": 69}
+        }, 
+        {
+            "Action": "EditMap",
+            "Target": "Maps/Woods",
+            "FromFile": "assets/Maps/Woods.tmx",
+            "FromArea":{"X": 30, "Y": 24, "Width": 3, "Height": 6},
+            "ToArea": {"X": 30, "Y": 24, "Width": 3, "Height": 6},
+            "AddWarps": [
+                "31 28 ChiiZelt 3 8"
+            ]
+        },
+
+
+
+
+        //3. Eine Map Änderung (bereits vorhandene Objekte entfernen, Büsche an der Bushaltestelle)
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Fields": {
+                "BusStop": {
+                    "FixedBushes": [
+                        {
+                            "Id": "32_17", // SMAPI nutzt oft die Koordinate als ID
+                            "Action": "Remove"
+                        }
+                    ]
+                },
+                "Woods": {
+                    "FixedBushes": [
+                        {
+                            "Id": "31_29", 
+                            "Action": "Remove"
+                        }
+                    ]
+                }
+            }
+        },
+
+
+
+
+        //Kuro
         {
             "Action": "Load",
             "Target": "Characters/Kuro",
@@ -36,47 +104,39 @@
             "Target": "Characters/Schedules/Kuro",
             "FromFile": "assets/Characters/schedules/KuroSchedule.json"
         },
-
-        //Lade KuroZelt
         {
             "Action": "Load",
             "Target": "Maps/KuroZelt",
             "FromFile": "assets/Maps/KuroZelt.tmx"
         },
 
-        //Eine Map-Änderung (z.B. ein Stück der Stadt bearbeiten)
+
+
+        //Chii
         {
-            "Action": "EditMap",
-            "Target": "Maps/BusStop",
-            "FromFile": "assets/Maps/BusStop.tmx",
-            "FromArea":{"X": 32, "Y": 12, "Width": 5, "Height": 8},
-            "ToArea": {"X": 32, "Y": 12, "Width": 5, "Height": 8},
-            "MapProperties": {
-                "Warp": "35 16 KuroZelt 3 8" // So in Zukunft Warps deklarieren
-            }
+            "Action": "Load",
+            "Target": "Characters/Chii",
+            "FromFile": "assets/Characters/Chii.png"
         },
         {
-            "Action": "EditMap",
-            "Target": "Maps/Town",
-            "FromFile": "assets/Maps/Town.tmx",
-            "FromArea":{"X": 109, "Y": 41, "Width": 21, "Height": 69},
-            "ToArea": {"X": 109, "Y": 41, "Width": 21, "Height": 69}
-            }, 
-
-        //Eine Map Änderung (bereits vorhandene Objekte entfernen, z.B. Büsche an der Bushaltestelle)
+            "Action": "Load",
+            "Target": "Portraits/Chii",
+            "FromFile": "assets/Portraits/Kuro.png"
+        },
         {
-            "Action": "EditData",
-            "Target": "Data/Locations",
-            "Fields": {
-                "BusStop": {
-                    "FixedBushes": [
-                        {
-                            "Id": "32_17", // SMAPI nutzt oft die Koordinate als ID
-                            "Action": "Remove"
-                        }
-                    ]
-                }
-            }
+            "Action": "Load",
+            "Target": "Characters/Dialogue/Chii",
+            "FromFile": "assets/Characters/Dialogue/ChiiDialogue.json"
+        },
+        /*{
+            "Action": "Load",
+            "Target": "Characters/Schedules/Chii",
+            "FromFile": "assets/Characters/schedules/ChiiSchedule.json"
+        }*/    
+        {
+            "Action": "Load",
+            "Target": "Maps/ChiiZelt",
+            "FromFile": "assets/Maps/ChiiZelt.tmx"
         }
     ]
 }

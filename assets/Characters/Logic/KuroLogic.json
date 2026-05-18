@@ -1,0 +1,36 @@
+{
+    "Changes": [
+        // ZUSTAND B: Met = Ja, aber Frage beantwortet = Nein
+        {
+            "Action": "EditData",
+            "Target": "Characters/Schedules/Kuro",
+            "TextOperations": [
+                {
+                    "Operation": "Replace",
+                    "Target": ["Entries", "default"],
+                    "Value": "0610 BusStop 23 21 \"Characters/Dialogue/Kuro:KuroGreeting\" / 1200 Town 41 57 0 / 1800 KuroZelt 3 6 2"
+                }
+            ],
+            "When": {
+                "HasFlag": "KuroMet", // Prüft, ob KuroMet existiert
+                "HasFlag |contains=Kuro_HatFrageBeantwortet": "false" // Prüft, ob die Flagge noch FEHLT
+            }
+        },
+
+        // ZUSTAND C: Frage wurde beantwortet
+        {
+            "Action": "EditData",
+            "Target": "Characters/Schedules/Kuro",
+            "TextOperations": [
+                {
+                    "Operation": "Replace",
+                    "Target": ["Entries", "default"],
+                    "Value": "0610 BusStop 23 21 \"Characters/Dialogue/Kuro:KuroNormalerGruss\" / 1200 Town 41 57 0 / 1800 KuroZelt 3 6 2"
+                }
+            ],
+            "When": {
+                "HasFlag": "Kuro_HatFrageBeantwortet"
+            }
+        }
+    ]
+}
