@@ -20,8 +20,8 @@
                     "ItemDeliveryQuests": true,
                     "DumpsterDiveEmote": 4,
                     "DumpsterDiveFriendshipEffect": 0,
-                    "Dialogue": "Characters/Dialogue/KuroDialogue",
-                    "Schedule": "Characters/Schedules/KuroSchedule",
+                    "Dialogue": "Characters/Dialogue/Kuro",
+                    "Schedule": "Characters/Schedules/Kuro",
                     "Home": [{
                         "Id": "KuroZelt",
                         "Location": "KuroZelt", // Wo er wohnt
